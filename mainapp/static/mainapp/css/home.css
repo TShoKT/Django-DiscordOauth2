@@ -1,0 +1,80 @@
+/*p, h1{
+	color: white;
+}
+*/
+*{
+	font-family: 'Varela';
+}
+
+body{
+	background-color: #23272A;
+}
+
+nav{
+	position: relative;
+	border-radius: 2vh;
+	background-color:rgb(88,101,242);
+}
+.navbar-brand img{
+	width: 6vh;
+}
+
+.navbar-brand span{
+	font-size: 2.5vh;
+}
+
+.nav-link span{
+  font-size: 2.5vh;
+}
+
+.footer{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.jumbotron{
+	background-color: #092D1F;
+	color: white; 
+}
+
+#Discord, #OAuth2, #About{
+	padding-top: 3vh;
+}
+
+#ShoK{
+	border-radius: 5px;
+	display: inline-flex;
+	background-color: #23272A;
+	padding-right:3vh;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#ShoK p{
+	font-size: 2vh;
+	padding-left: 2vh;
+}
+
+#Auth, #Auth a{
+	color: white;
+}
+
+#Auth a{
+	background-color: #092D1F;
+	border-color: white;
+	margin-top: 2vh;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+#Auth{
+	text-align: center;
+	align-items: center;
+}
+
+.btn-floating{
+	text-align: center;
+	align-items: center;
+}

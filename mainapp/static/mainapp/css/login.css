@@ -1,0 +1,143 @@
+
+:root{
+    --profile_color : #141313;
+}
+
+p, h1, h2, th, td{
+    color: white;
+}
+
+*{
+    font-family: 'Varela';
+}
+	body{
+		background-color: #23272A;
+	}
+
+	nav{
+		position: relative;
+		border-radius: 2vh;
+		background-color:rgb(88,101,242);
+	}
+	.navbar-brand img{
+		width: 6vh;
+	}
+
+.nav-link{
+  font-size: 2.5vh;
+  color: white;
+}
+
+.status{
+    padding-top: 20vh;
+}
+
+#footer{
+    padding-top: 15vh;
+}
+
+hr{
+    background-color: white;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px white;
+}
+
+.card{
+    width: 40vh;
+    background-color: #23272A;
+    top: 3vh;
+}
+
+.card-img-top{
+    opacity : 0.0;
+    width: 100%;
+    position: relative;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.card-body{
+    position: relative;
+    background-color: var(--profile_color);
+}
+.card .mx-auto{
+    opacity: 0.0;
+    position: absolute;
+    width: 40%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+    margin-top: 31vh;
+    border-style: solid;
+    border-width: thick;
+    border-color: var(--profile_color);
+}
+
+.card-title{
+    padding-top: 5vh;
+    background-color: var(--profile_color);
+    color: white;
+}
+
+.card-body{
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+table{
+    top: 3vh;
+    background-color: #1b2329;
+}
+table, th, td span, i{
+    position: relative;
+}
+td, th{
+    text-align: center; 
+    vertical-align: middle;
+}
+tbody tr td span, td i{
+    top: 25px;
+}
+td img{
+    border-style: solid;
+    border-color: white;
+    width: 8vh;
+}
+
+.footer{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@-moz-keyframes rotate_l {
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+
+@-webkit-keyframes rotate_l {
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+
+@keyframes rotate_l { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+
+
+@-moz-keyframes rotate_r {
+    100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); }
+}
+
+@-webkit-keyframes rotate_r {
+    100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); }
+}
+
+@keyframes rotate_r { 
+    100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } 
+}
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+.btn-floating{
+	text-align: center;
+	align-items: center;
+}

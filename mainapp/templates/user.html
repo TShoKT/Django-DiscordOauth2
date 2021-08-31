@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}User{% endblock %}
+{% block style %} 
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/login.css' %}">
+{% endblock %}
+{% block body %}data-spy="scroll" data-target=".navbar" data-offset="50"{% endblock %}
+{% block content %}	
+    <br><br>
+	<div class="container">
+        <nav class="navbar navbar-expand-sm  navbar-dark sticky-top">
+            <a class="navbar-brand" href="#avatar"><img class="rounded-circle" src="{{user.avatar}}"></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#User">User</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#Servers">Servers</a>
+                    </li>
+                </ul>
+            </div>
+            <form class="form-inline" action="/home" method="post"> {% csrf_token %}
+                <button id="Logout" type="submit" class="btn btn-dark btn-lg" title="Logout"><span class=""></span>Logout</button>
+            </form>
+        </nav> 
+		<div class="container" id="test">
+            <section id="User" class="status">
+                <h2>User</h2>
+                <hr>
+                <div class="mx-auto card">
+                    <img class="card-img-top" src="{{user.avatar}}" alt="Card image" id="avatar">
+                    <img class="rounded-circle mx-auto" src="{{user.avatar}}" alt="Card image">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h4><span data-toggle="tooltip" title="{{user.username}}"><b>{{user.username}}</b></span></h4>
+                            <p>ID: {{user.id}}</p>
+                            <p>Username: {{user.username}}</p>
+                            <p><span data-toggle="tooltip" title="<code>{{user.username}}#{{user.discriminator}}</code>">Discriminator: {{user.discriminator}}</span></p>
+                            <p>Premium type: {{user.premium_type}}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="Servers" class="status">
+                <h2>Servers</h2>
+                <hr>
+                <div class="table-responsive-sm">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Icon</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Owner</th>
+                                <th>Permissions</th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for guild in guilds%}
+                            <tr>
+                                <td ><img class="rounded-circle" src="{{guild.icon}}"></td>
+                                <td><span>{{guild.id}}</span></td>
+                                <td><span>{{guild.name}}</span></td>
+                                <td><i {% if guild.owner %} class="text-success text-center fas fa-check" {% else %} class="text-danger text-center fas fa-times" {% endif %}></i></td>
+                                <td><i {% if guild.user_is_administrator %} class="text-success text-center fas fa-check" {% else %} class="text-danger text-center fas fa-times" {% endif %}></i></td>                                
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+		</div>
+	</div>
+{% endblock %}
+{% block js%}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="{% static 'mainapp/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'mainapp/js/script.js'%}"></script>
+{% endblock %}
+</body>
+</html>
