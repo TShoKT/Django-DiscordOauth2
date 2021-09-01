@@ -15,4 +15,4 @@ allows you to see your profile and the servers you are in after your authenticat
 [**Discord**](https://discord.com/company) is a voice, video and text communication service used by over a hundred million people to hang out and talk with their friends and communities.
 
 # What is OAuth2?
-[OAuth2](https://discord.com/developers/docs/topics/oauth2#oauth2) enables application developers to build applications that utilize authentication and data from the Discord API. Within Discord, there are multiple types of OAuth2 authentication. We support the authorization code grant, the implicit grant, client credentials, and some modified special-for-Discord flows for Bots and Webhooks.
+[**OAuth2**](https://discord.com/developers/docs/topics/oauth2#oauth2) enables application developers to build applications that utilize authentication and data from the Discord API. Within Discord, there are multiple types of OAuth2 authentication. We support the authorization code grant, the implicit grant, client credentials, and some modified special-for-Discord flows for Bots and Webhooks.

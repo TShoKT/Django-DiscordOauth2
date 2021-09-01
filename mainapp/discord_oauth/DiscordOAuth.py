@@ -117,7 +117,7 @@ class Guild:
 
   @property
   def user_is_administrator(self):
-    return self.__guild["permissions"] == '274877906943'
+    return self.__guild["permissions"] == '549755813887'
   
   @property
   def icon(self):
