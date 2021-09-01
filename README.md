@@ -11,22 +11,6 @@ This project was just to practice in the **Django** framework and challenge me i
 
 allows you to see your profile and the servers you are in after your authentication in Discord, but according to Discord rules and the services it provides to us. So do not worry about stealing your identity and the servers you are on.
 
-# What is Discord?
-[**Discord**](https://discord.com/company) is a voice, video and text communication service used by over a hundred million people to hang out and talk with their friends and communities.
-
-# What is OAuth2?
-[**OAuth2**](https://discord.com/developers/docs/topics/oauth2#oauth2) enables application developers to build applications that utilize authentication and data from the Discord API. Within Discord, there are multiple types of OAuth2 authentication. We support the authorization code grant, the implicit grant, client credentials, and some modified special-for-Discord flows for Bots and Webhooks.
-
-# Requirements
-  ### Python
-  **Python 3.6** or greater
-  ### Packages
-    asgiref==3.4.1
-    pytz==2021.1
-    sqlparse==0.4.1
-    Django==3.2.6
-    python-decouple==3.4
- 
  # How to usage
  1. Clone this repo.
  2. Open command prompt inside the folder where you cloned repo and enter this command `pip install -r requirements.txt`.
