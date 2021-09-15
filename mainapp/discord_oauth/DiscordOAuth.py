@@ -117,12 +117,10 @@ class Guild:
 
   @property
   def user_is_administrator(self):
-    return self.__guild["permissions"] == '549755813887'
+    #Due to the annoyance of the discord in changing the permissions, I have to change it every time 😐
+    return self.__guild["permissions"] == '1099511627775'
   
   @property
   def icon(self):
     return f"https://cdn.discordapp.com/icons/{self.__guild['id']}/{self.__guild['icon']}.png" if self.__guild['icon'] else default_icon_avatar
     
-
-if __name__ == "__main__":
-  print(client_id)
