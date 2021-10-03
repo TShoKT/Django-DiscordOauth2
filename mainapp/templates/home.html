@@ -11,34 +11,11 @@
 	<div class="container">
 		<nav class="navbar navbar-expand-sm  navbar-dark ">
 			<a class="navbar-brand mx-auto" href="#DiscordOauth2"><img class="rounded-circle" src="{% static 'mainapp/images/django_discord.png' %}"><span> DiscordOauth2</span></a>
-			<!--
-			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<button id="mode" type="submit" class="btn btn-dark btn-lg ml-auto"><span class=""></span>LightMode</button>
-			</div>
-			-->
 		</nav> 
 	</div>
 	<div class="container" style="padding-top: 3vh;">
-		<div class="jumbotron">
-			<h1><strong id="DiscordOauth2">DiscordOauth2</strong></h1>
-			<div id="Discord">
-				<h4>Discord</h4>
-				<blockquote cite="https://discord.com/company"><a href="https://discord.com/company" target="_blank">Discord</a> is a voice, video and text communication service used by over a hundred million people to hang out and talk with their friends and communities.</blockquote>
-			</div>
-			<div id="OAuth2">
-				<h4>OAuth2</h4>
-				<blockquote cite="https://discord.com/developers/docs/topics/oauth2#oauth2">
-					<a href="https://discord.com/developers/docs/topics/oauth2#oauth2" target="_blank">OAuth2</a> enables application developers to build applications that utilize authentication and data from the Discord API. Within Discord, there are multiple types of OAuth2 authentication. We support the authorization code grant, the implicit grant, client credentials, and some modified special-for-Discord flows for Bots and Webhooks.
-				</blockquote>
-			</div>
-			<div id="About">
-				<h4>About</h4>
-				<p>This site allows you to see your profile and the servers you are in after your authentication in Discord, but according to Discord rules and the services it provides to us. So do not worry about stealing your identity and the servers you are on.</p>
-				<p>This is just a simple project that is just for practice and challenge for me. If you see a problem, please raise it on my github repository issue or dm on discord → <kbd>ShoK#0002</kbd>.</p>
-			</div>	
+		<div class="jumbotron" id="maincontainer">
+			<h4>Loading project Markdown from github...</h4>
 		</div>	
 		<div id="Auth"><span>⇘Click here to authenticate yourself⇙<br></span>
 			<a href="{{auth_url}}" class="btn btn-lg shadow-none">Authentication</button>
@@ -48,6 +25,25 @@
 {% block js %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'mainapp/bootstrap/js/bootstrap.min.js' %}"></script>
+<script>
+	function markdownParser(markdown) {
+		const htmlText = markdown
+			.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+			.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+			.replace(/^### (.*$)/gim, '<h3>$1</h3>')
+			.replace(/^#### (.*$)/gim, '<h4>$1</h4>')
+			.replace(/^##### (.*$)/gim, '<h5>$1</h5>')
+			.replace(/^###### (.*$)/gim, '<h6>$1</h6>')
+			.replace("\n", '<br>')
+		return htmlText.trim() 
+	}
+	fetch('https://raw.githubusercontent.com/TShoKT/Django-DiscordOauth2/main/README.md')
+	.then(function(response) {
+		response.text().then(function(text) {
+			document.getElementById('maincontainer').innerHTML = markdownParser(text);
+		});
+	});
+</script>
 <script>
 	$(document).ready(() =>{
 		$(".navbar-brand").click(function(){
